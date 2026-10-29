@@ -1,0 +1,24 @@
+{
+  "schema": "pocforge.evidence/v1",
+  "root": ".",
+  "count": 3,
+  "total_bytes": 513,
+  "files": [
+    {
+      "path": "cleanup-204.http",
+      "bytes": 118,
+      "sha256": "a07fd8c8a293d1733ce1fada3e8b72c4d345cd39aacf9f200c10a0282dc0bfe9"
+    },
+    {
+      "path": "step-02-control.http",
+      "bytes": 174,
+      "sha256": "b278c8b2b960380a6ec06917815ec6be7a442e2603b68cda0540a1dcb843d966"
+    },
+    {
+      "path": "step-03-trigger.http",
+      "bytes": 221,
+      "sha256": "886711fefbd5c763a745a1d7e391b0f6138b762497bd5423ee9c95671a201709"
+    }
+  ],
+  "manifest_sha256": "b05115ac876ab67e75b2231ca27765d1150d1148547ffd57ace96dce73d327df"
+}

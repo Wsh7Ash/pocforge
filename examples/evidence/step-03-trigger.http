@@ -1,0 +1,8 @@
+GET /v2/orders/1042 HTTP/1.1
+Host: api.example.test
+Authorization: Bearer {{bob_token}}
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"id":1042,"owner":"POC-ALICE-7741","email":"poc-alice@example.test","total":12900}

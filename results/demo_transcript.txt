@@ -1,0 +1,26 @@
+$ pocforge check examples/poc/idor-order-read.json --evidence-root examples/evidence
+idor-order-read: grade A (100/100) submittable
+exit=0
+
+$ pocforge check results/_incomplete.json
+draft: grade D (0/100) NOT submittable
+  blocking scope-ref: target has no scope reference
+  blocking authorized: target is not marked authorized
+  major    preconditions: found 0 precondition(s), need 2
+  blocking evidence: no evidence entries
+  major    impact: impact must name what an attacker gains and who is affected
+  major    reproduction: no reproduction command or fixture
+exit=1
+
+$ pocforge verify examples/evidence/manifest.json --root examples/evidence
+ok  3 file(s) match examples/evidence/manifest.json
+exit=0
+
+$ printf 'x' >> examples/evidence/step-03-trigger.http   # simulate an edited capture
+FAIL size changed: step-03-trigger.http (221 -> 222 bytes)
+FAIL digest changed: step-03-trigger.http
+exit=1
+
+$ python -c 'restore the capture and re-verify'
+ok  3 file(s) match examples/evidence/manifest.json
+exit=0
